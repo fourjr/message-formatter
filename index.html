@@ -35,13 +35,15 @@
     <div class="textAreaSingle">
         <span>Result</span>
         <textarea id="result" readonly></textarea>
-        <div>
-            <button type="button" onclick="copy(false)">Copy All</button>
-            <div class="copyMessage" id="copyAllMessage"></div>
-            <div class="copySelected">
+        <div class="copy">
+            <div>
                 <input type="number" id="copyOne" autocomplete="off" min=1 value=1 style="width:5ch" onchange="resizeField(this)" onkeydown="resizeField(this)">
                 <button type="button" onclick="copy(true)">Copy</button>
                 <div class="copyMessage" id="copySelectedMessage"></div>
+            </div>
+            <div>
+                <button type="button" onclick="copy(false)">Copy All</button>
+                <div class="copyMessage" id="copyAllMessage"></div>
             </div>
         </div>
 </div>
