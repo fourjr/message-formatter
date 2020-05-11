@@ -99,3 +99,12 @@ table, th, td {
 thead {
     font-weight: bold;
 }
+
+.copyMessage {
+    display: inline;
+    font-size: 14px
+}
+
+.copySelected {
+    padding-top: 4px;
+}

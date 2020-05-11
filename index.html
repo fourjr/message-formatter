@@ -12,11 +12,11 @@
     <div class="textAreaColumn">
         <div>
             <span>Timeslots</span>
-            <textarea id="input-value" onchange="inputChange()"></textarea>
+            <textarea id="input-value" onchange="inputChange()" autocomplete="off"></textarea>
         </div>
         <div>
             <span>Message Format</span>
-            <textarea id="message-fmt" onchange="inputChange()"></textarea>
+            <textarea id="message-fmt" onchange="inputChange()" autocomplete="off"></textarea>
         </div>
     </div>
 
@@ -36,7 +36,13 @@
         <span>Result</span>
         <textarea id="result" readonly></textarea>
         <div>
-            <button type="button" id="copy" onclick="copy()">Copy</button>
+            <button type="button" onclick="copy(false)">Copy All</button>
+            <div class="copyMessage" id="copyAllMessage"></div>
+            <div class="copySelected">
+                <input type="number" id="copyOne" autocomplete="off" min=1 value=1 style="width:5ch" onchange="resizeField(this)" onkeydown="resizeField(this)">
+                <button type="button" onclick="copy(true)">Copy</button>
+                <div class="copyMessage" id="copySelectedMessage"></div>
+            </div>
         </div>
 </div>
 

@@ -1,3 +1,6 @@
+var messages = [];
+var names = [];
+
 examples = [
     [
 `1000 (Group 1)\t1100 (Group 2)\t1200 (Group 3)
@@ -97,7 +100,6 @@ function inputChange() {
         linenum += 1
     }
 
-    let messages = []
     let groupno = 0
     for (group of users) {
         for (name of group) {
@@ -113,6 +115,7 @@ function inputChange() {
                     time = timeDate[timeDate.length - 1].trim()
                     date = timeDate.slice(0, timeDate.length - 1).join(',').trim()
                 }
+                names.push(name.toTitleCase())
                 messages.push(
                     messageFMT.replace(/{name}/g, name.toTitleCase())
                               .replace(/{time}/g, time)
@@ -126,24 +129,54 @@ function inputChange() {
     result = $('#result')
     result.val('')
     result.val(messages.join('\n----------------------\n'))
+    $('#copyOne').attr('max', messages.length)
 }
 
 
-function showTooltip(type) {
+function resizeField(elem) {
+    elem.style.width = (elem.value.length + 4) + 'ch';
+}
 
-}
-function hideTooltip(type) {
-    
-}
 function example(index) {
     $('#input-value').val(examples[index][0])
     $('#message-fmt').val(examples[index][1])
     inputChange()
 }
 
-function copy() {
-    $('#result').select()
-    document.execCommand('copy')
+function copy(index) {
+    if (index) {
+        index = parseInt($('#copyOne').val()) - 1;
+        if (index >= messages.length) {
+            $('#copyOne').val(1)
+            alert('Maximum value to copy from is ' + messages.length)
+        }
+        else {
+            let temp = $("<textarea>");
+            $("body").append(temp);
+            temp.val(messages[index]).select()
+            document.execCommand("copy");
+            temp.remove();
+
+            $('#copyOne').val(parseInt($('#copyOne').val()) + 1)
+            $('#copySelectedMessage').html('Copied ' + names[index])
+            setTimeout(() => {
+                elem = $('#copySelectedMessage')
+                if (elem.html() == 'Copied ' + names[index]) {
+                    console.log('delete')
+                    elem.html('')
+                }
+            }, 1000)
+        }
+    }
+    else {
+        $('#result').select()
+        document.execCommand('copy')
+        $('#copyAllMessage').html('Copied All')
+        setTimeout(() => {
+            elem = $('#copyAllMessage')
+            elem.html('')
+        }, 1000)
+    }
 }
 
 function reset() {
