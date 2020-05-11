@@ -162,7 +162,6 @@ function copy(index) {
             setTimeout(() => {
                 elem = $('#copySelectedMessage')
                 if (elem.html() == 'Copied ' + names[index]) {
-                    console.log('delete')
                     elem.html('')
                 }
             }, 1000)
