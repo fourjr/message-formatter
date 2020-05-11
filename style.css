@@ -2,6 +2,7 @@ body {
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
     font-size: 16px;
 }
+
 textarea {
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
     font-size: 13px;
@@ -9,6 +10,10 @@ textarea {
     width: 100%;
     min-height: 150px;
     max-width: 100%;
+}
+
+span {
+    font-weight: bold;
 }
 
 textarea#input-value {
@@ -64,7 +69,13 @@ button#submit {
     min-height: 250px;
 }
 .textAreaSingle div {
-    padding-top: 3px
+    padding-top: 4px;
+}
+
+
+.examples {
+    padding-top: 4px;
+    text-align: center;
 }
 
 

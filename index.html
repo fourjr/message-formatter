@@ -22,6 +22,12 @@
 
     <div><button type="button" id="submit" onclick="inputChange()">Generate Messages</button></div>
 
+    <div class="examples">
+        <button type="button" onclick="example(0)">Basic Example</button>
+        <button type="button" onclick="example(1)">Advanced Example</button>
+        <button type="button" onclick="reset()">Clear</button>
+    </div>
+
     <div class="inputTable">
         <table id="input-table" style="width:100%" border="1"></table>
     </div>
@@ -31,7 +37,6 @@
         <textarea id="result" readonly></textarea>
         <div>
             <button type="button" id="copy" onclick="copy()">Copy</button>
-            <button type="button" id="clear" onclick="reset()">Clear</button>
         </div>
 </div>
 
