@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Formatter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h2>Message Formatter</h2>
+    <div class="textAreaColumn">
+        <div>
+            <span>Timeslots</span>
+            <textarea id="input-value" onchange="inputChange()"></textarea>
+        </div>
+        <div>
+            <span>Message Format</span>
+            <textarea id="message-fmt" onchange="inputChange()"></textarea>
+        </div>
+    </div>
+
+    <div><button type="button" id="submit" onclick="inputChange()">Generate Messages</button></div>
+
+    <div class="inputTable">
+        <table id="input-table" style="width:100%" border="1"></table>
+    </div>
+
+    <div class="textAreaSingle">
+        <span>Result</span>
+        <textarea id="result" readonly></textarea>
+        <div>
+            <button type="button" id="copy" onclick="copy()">Copy</button>
+            <button type="button" id="clear" onclick="reset()">Clear</button>
+        </div>
+</div>
+
+</body>
+</html>

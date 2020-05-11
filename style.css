@@ -1,0 +1,90 @@
+body {
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-size: 16px;
+}
+textarea {
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-size: 13px;
+    overflow-y: scroll;
+    width: 100%;
+    min-height: 150px;
+    max-width: 100%;
+}
+
+textarea#input-value {
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: scroll;
+}
+
+h2 {
+    text-align: center;
+}
+
+.textAreaColumn {
+    width: 100%;
+}
+
+.textAreaColumn div {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.textAreaColumn div span {
+    display: block;
+    text-align: center;
+}
+
+.textAreaColumn div textarea {
+    box-sizing: border-box;
+    border:1px thin black;
+    resize: none;
+}
+
+button#submit {
+    margin: auto;
+    display: block;
+}
+
+
+.textAreaSingle {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+}
+.textAreaSingle span {
+    display: block;
+    text-align: left;
+}
+.textAreaSingle textarea {
+    min-height: 250px;
+}
+.textAreaSingle div {
+    padding-top: 3px
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+.inputTable {
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none
+}
+
+table, th, td {
+    padding: 5px;   
+    border: 1px solid black;
+    font-size: 14px;
+}
+
+thead {
+    font-weight: bold;
+}
