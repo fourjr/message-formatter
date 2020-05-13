@@ -52,6 +52,8 @@ function inputChange() {
     let val = $('#input-value').val()
     let messageFMT = $('#message-fmt').val()
     let table = $('#input-table')
+    names = []
+    messages = []
 
     if (!val || !messageFMT) {
         $('.inputTable').css('display', 'none')
